@@ -1,2 +1,2 @@
-# biblioteka-jest
-Biblioteka Jest - testowanie aplikacji w React.js
+# Jest library
+Learn jest basic testing
