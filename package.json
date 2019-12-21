@@ -15,6 +15,10 @@
     "test": "jest",
     "eject": "react-scripts eject"
   },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -23,5 +27,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "codecov": "^3.6.1"
+  }
 }
