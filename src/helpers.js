@@ -1,4 +1,4 @@
-export const initLocalStorageCurry = (imageList) => (imageList) => {
+export const initLocalStorageCurry = (localStorage) => (imageList) => {
   if (localStorage.getItem('imageList') === null) {
     localStorage.setItem('imageList', JSON.stringify(imageList));
   }
@@ -8,10 +8,12 @@ export const initLocalStorage = initLocalStorageCurry(window.localStorage);
 
 export const addCommentCurry = (localStorage) => (imageId, author, text) => {
   let imageList = JSON.parse(localStorage.getItem('imageList'));
-  imageList[imageId].comments.push({
-    author,
-    text,
-  });
+  imageList[imageId].comments.push(
+    {
+      author,
+      text,
+    }
+  );
 
   localStorage.setItem('imageList', JSON.stringify(imageList));
 }
