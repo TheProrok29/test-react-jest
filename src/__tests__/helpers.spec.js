@@ -1,6 +1,7 @@
 import {
     initLocalStorageCurry,
-    addCommentCurry
+    addCommentCurry,
+    addLikeCurry
 } from "../helpers.js"
 
 describe("initLocalStorage", () => {
@@ -51,4 +52,16 @@ describe("addComment", () => {
             ]
         }]))
     })
+});
+
+describe("addLike", () => {
+    it("should add a like", () => {
+        const setItem = jest.fn();
+        const getItem = jest.fn();
+        getItem.mockReturnValue(JSON.stringify([{ likes: 0 }]));
+        const localStorage = { getItem, setItem };
+        const addLike = addLikeCurry(localStorage);
+        addLike(0);
+        expect(setItem).toBeCalledWith("imageList", JSON.stringify([{ likes: 1 }]))
+    });
 });
