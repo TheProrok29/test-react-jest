@@ -1,5 +1,18 @@
-describe('App component', () => {
-    it('should render', () => {
-        expect(true).toBeTruthy();
+import React from 'react';
+import { shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import 'jest-enzyme';
+import App from '../App';
+
+configure({ adapter: new Adapter() });
+
+describe('App', () => {
+    it('should render single image', () => {
+        const wrapper = shallow(<App />);
+        wrapper.setState({
+            imageId: 0,
+            imageList: ['first', 'second'],
+        });
+        expect(wrapper).toMatchSnapshot();
     });
 });
