@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`App should render gallery 1`] = `
+<div>
+  <Header
+    gotoMainSiteHandler={[Function]}
+    isShowImage={false}
+  />
+  <div
+    className="container"
+  >
+    <Gallery
+      gotoImageHandler={[Function]}
+      imageList={null}
+    />
+  </div>
+</div>
+`;
+
 exports[`App should render single image 1`] = `
 <div>
   <Header

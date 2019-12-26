@@ -13,6 +13,16 @@ describe('App', () => {
             imageId: 0,
             imageList: ['first', 'second'],
         });
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render gallery', () => {
+        const wrapper = shallow(<App />);
+        wrapper.setState({
+            imageId: null,
+        });
+
         expect(wrapper).toMatchSnapshot();
     });
 });
